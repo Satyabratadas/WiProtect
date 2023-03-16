@@ -23,8 +23,8 @@ class ViewController: UIViewController {
             
             if isConnectionAvailable != false{
                 self.networkStatus.text = "Connection available"
-                self.networkSecurity.checkWifiSecurityType { status in
-                    switch status{
+                self.networkSecurity.checkWifiSecurityType { securityStatus in
+                    switch securityStatus{
                     case .Unsecured:
                         self.showAlertUnsecure(title: "Connection not secure", message: "Not continue this application") {
                             self.networkConnectionType.text = "Unsecure connection harmful"
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         }
 
     }
-   
+   // if connection is unsecure show alert and stop the application
     func showAlertUnsecure(title : String , message : String , completion : @escaping () -> ()) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
@@ -58,15 +58,10 @@ class ViewController: UIViewController {
         self.present(alert, animated: true)
         
     }
+    //if connection is secure then continue the application
     func showAlertSecure(title : String , message : String , completion : @escaping () -> ()) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-//                UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
-//                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//                  exit(0)
-//                 }
-//            }
             completion()
         }))
         self.present(alert, animated: true)

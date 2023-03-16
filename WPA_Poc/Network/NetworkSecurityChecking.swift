@@ -14,9 +14,9 @@ enum NetworkStatus{
 }
 
 class NetworkSecurityCheck{
-    
+    // Check wifi protocol security type like Unsecure,WEP,WPA,WPA2
     func checkWifiSecurityType(completion: @escaping(NetworkStatus) -> ()) {
-        let monitor = NWPathMonitor()
+        let monitor = NWPathMonitor()                                                               // Observe wifi connection in every time that which wifi connected
         monitor.start(queue: DispatchQueue.global(qos: .background))
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
