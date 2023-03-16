@@ -12,30 +12,34 @@ import NetworkExtension
 class NetworkSecurityCheck{
     
     
-    func checkWifiSecurityType (connectionTypeText:UILabel,statusText:UILabel,completion:@escaping(Bool) -> ()) {
-        
-        NEHotspotNetwork.fetchCurrent { network in
-            let securityType = NEHotspotNetworkSecurityType(rawValue: network?.securityType.rawValue ?? 0)
-
-            switch securityType?.rawValue{
-            case 0:
-                statusText.text = "No connection"
-                connectionTypeText.text = "Open Connection Not Secure"
-                completion(true)
-            case 1:
-                connectionTypeText.text = "WEP secure"
-            case 2:
-                connectionTypeText.text = "WPA secure"
-            case 3:
-                connectionTypeText.text = "WPA enterprise secure"
-            case 4:
-                connectionTypeText.text = "Unknown connection not secure"
-            default:
-                connectionTypeText.text = "Something error"
-                statusText.text = "No connection"
-                completion(true)
+    func checkWifiSecurityType (completion:@escaping(String) -> ()) {
+        let monitor = NWPathMonitor()
+        monitor.start(queue: DispatchQueue.global(qos: .background))
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                
+                NEHotspotNetwork.fetchCurrent { network in
+                    let securityType = NEHotspotNetworkSecurityType(rawValue: network?.securityType.rawValue ?? 0)
+                    
+                    switch securityType?.rawValue{
+                    case 0:
+                        completion("unsecure")
+                    case 1:
+                        completion("secure")
+                    case 2:
+                        completion("secure")
+                    case 3:
+                        completion("secure")
+                    case 4:
+                        completion("unsecure")
+                    default:
+                        completion("unsecure")
+                    }
+                    
+                }
+            }else{
+                
             }
-    
         }
     }
 }

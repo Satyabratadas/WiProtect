@@ -8,7 +8,6 @@
 import UIKit
 
 
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var networkStatus: UILabel!
@@ -23,27 +22,34 @@ class ViewController: UIViewController {
         self.networkManager.completion = { (isConnectionAvailable) in
             
             if isConnectionAvailable != false{
-                self.networkStatus.text = "Connection Available"
-                self.networkSecurity.checkWifiSecurityType(connectionTypeText: self.networkConnectionType, statusText: self.networkStatus, completion: { result in
-                    print(result)
-                    if result != false{
-                        self.showAlert(title: "Connection not secure", message: "") {
-
-                        }
-                    }
-                })
+                self.networkStatus.text = "Connection available"
+                        self.networkSecurity.checkWifiSecurityType(completion: { result in
+                            print(result)
+                            if result != "secure"{
+                                self.showAlertUnsecure(title: "Connection not secure", message: "Not continue this application") {
+                                    self.networkConnectionType.text = "Unsecure connection harmful"
+                                }
+                                
+                            }else{
+                                self.showAlertSecure(title: "Secure connection", message: "Continue this application") {
+                                    self.networkConnectionType.text = "Secure Connection"
+                                    
+                                }
+                            }
+                        })
+                        
+                    
                 
-            
             }else{
                 self.networkStatus.text = "Connection Not available"
                 self.networkConnectionType.text = "No connection"
             }
-
+            
         }
 
     }
    
-    func showAlert(title : String , message : String , completion : @escaping () -> ()) {
+    func showAlertUnsecure(title : String , message : String , completion : @escaping () -> ()) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -52,6 +58,20 @@ class ViewController: UIViewController {
                   exit(0)
                  }
             }
+            completion()
+        }))
+        self.present(alert, animated: true)
+        
+    }
+    func showAlertSecure(title : String , message : String , completion : @escaping () -> ()) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//                UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
+//                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//                  exit(0)
+//                 }
+//            }
             completion()
         }))
         self.present(alert, animated: true)
