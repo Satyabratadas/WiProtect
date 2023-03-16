@@ -9,10 +9,13 @@ import Foundation
 import UIKit
 import NetworkExtension
 
+enum NetworkStatus{
+    case Unsecured, Secured
+}
+
 class NetworkSecurityCheck{
     
-    
-    func checkWifiSecurityType (completion:@escaping(String) -> ()) {
+    func checkWifiSecurityType(completion: @escaping(NetworkStatus) -> ()) {
         let monitor = NWPathMonitor()
         monitor.start(queue: DispatchQueue.global(qos: .background))
         monitor.pathUpdateHandler = { path in
@@ -23,19 +26,18 @@ class NetworkSecurityCheck{
                     
                     switch securityType?.rawValue{
                     case 0:
-                        completion("unsecure")
+                        completion(.Unsecured)
                     case 1:
-                        completion("secure")
+                        completion(.Secured)
                     case 2:
-                        completion("secure")
+                        completion(.Secured)
                     case 3:
-                        completion("secure")
+                        completion(.Secured)
                     case 4:
-                        completion("unsecure")
+                        completion(.Unsecured)
                     default:
-                        completion("unsecure")
+                        completion(.Unsecured)
                     }
-                    
                 }
             }else{
                 

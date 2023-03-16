@@ -23,23 +23,18 @@ class ViewController: UIViewController {
             
             if isConnectionAvailable != false{
                 self.networkStatus.text = "Connection available"
-                        self.networkSecurity.checkWifiSecurityType(completion: { result in
-                            print(result)
-                            if result != "secure"{
-                                self.showAlertUnsecure(title: "Connection not secure", message: "Not continue this application") {
-                                    self.networkConnectionType.text = "Unsecure connection harmful"
-                                }
-                                
-                            }else{
-                                self.showAlertSecure(title: "Secure connection", message: "Continue this application") {
-                                    self.networkConnectionType.text = "Secure Connection"
-                                    
-                                }
-                            }
-                        })
-                        
-                    
-                
+                self.networkSecurity.checkWifiSecurityType { status in
+                    switch status{
+                    case .Unsecured:
+                        self.showAlertUnsecure(title: "Connection not secure", message: "Not continue this application") {
+                            self.networkConnectionType.text = "Unsecure connection harmful"
+                        }
+                    case .Secured:
+                        self.showAlertSecure(title: "Secure connection", message: "Continue this application") {
+                            self.networkConnectionType.text = "Secure Connection"
+                        }
+                    }
+                }
             }else{
                 self.networkStatus.text = "Connection Not available"
                 self.networkConnectionType.text = "No connection"
