@@ -39,8 +39,6 @@ class NetworkSecurityCheck{
                         completion(.Unsecured)
                     }
                 }
-            }else{
-                
             }
         }
     }
