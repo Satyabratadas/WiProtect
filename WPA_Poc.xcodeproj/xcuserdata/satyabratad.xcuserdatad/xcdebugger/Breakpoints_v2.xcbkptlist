@@ -30,8 +30,8 @@
             filePath = "WPA_Poc/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "WPA_Poc/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "WPA_Poc/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -100,7 +100,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D5CF5C8C-A983-4687-82C3-834C790FABDA - 3bf6e9e154419d0d"
+                  uuid = "D5CF5C8C-A983-4687-82C3-834C790FABDA - 3bf6e9e154419d2e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -110,12 +110,12 @@
                   urlString = "file:///Users/satyabratad/Desktop/practice/WPA_Poc/WPA_Poc/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
                   offsetFromSymbolStart = "104">
                </Location>
                <Location
-                  uuid = "D5CF5C8C-A983-4687-82C3-834C790FABDA - 89b022ca41471828"
+                  uuid = "D5CF5C8C-A983-4687-82C3-834C790FABDA - 89b022ca4147180f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -125,11 +125,91 @@
                   urlString = "file:///Users/satyabratad/Desktop/practice/WPA_Poc/WPA_Poc/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "112">
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "92">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "755B9CD8-6C21-4BCB-8707-FEC20FDE623B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WPA_Poc/Network/NetworkSecurityChecking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "checkWifiSecurityType(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "755B9CD8-6C21-4BCB-8707-FEC20FDE623B - c547aafd2a9184b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Network.NWPath) -&gt; () in WPA_Poc.NetworkSecurityCheck.checkWifiSecurityType(completion: (WPA_Poc.NetworkStatus) -&gt; ()) -&gt; ()"
+                  moduleName = "WPA_Poc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satyabratad/Desktop/practice/WPA_Poc/WPA_Poc/Network/NetworkSecurityChecking.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "416">
+               </Location>
+               <Location
+                  uuid = "755B9CD8-6C21-4BCB-8707-FEC20FDE623B - 3a2f20cc09708b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.NEHotspotNetwork&gt;) -&gt; () in closure #1 (Network.NWPath) -&gt; () in WPA_Poc.NetworkSecurityCheck.checkWifiSecurityType(completion: (WPA_Poc.NetworkStatus) -&gt; ()) -&gt; ()"
+                  moduleName = "WPA_Poc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satyabratad/Desktop/practice/WPA_Poc/WPA_Poc/Network/NetworkSecurityChecking.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2D51B44C-F6CE-45F3-B00D-5BE3A5A0C642"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WPA_Poc/Network/NetworkSecurityChecking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "checkWifiSecurityType(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E848386-61E6-4ECC-AAE0-37E653B856EA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WPA_Poc/Network/NetworkSecurityChecking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "checkWifiSecurityType(completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

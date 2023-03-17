@@ -10,7 +10,7 @@ import UIKit
 import NetworkExtension
 
 enum NetworkStatus{
-    case Unsecured, Secured
+    case Unsecured, WPA_secured, WEP_secured, Enterprise_secured
 }
 
 class NetworkSecurityCheck{
@@ -22,17 +22,20 @@ class NetworkSecurityCheck{
             if path.status == .satisfied {
                 
                 NEHotspotNetwork.fetchCurrent { network in
+                    print(network?.ssid as Any)
+                    print(network?.bssid as Any)
+                   
                     let securityType = NEHotspotNetworkSecurityType(rawValue: network?.securityType.rawValue ?? 0)
                     
                     switch securityType?.rawValue{
                     case 0:
                         completion(.Unsecured)
                     case 1:
-                        completion(.Secured)
+                        completion(.WEP_secured)
                     case 2:
-                        completion(.Secured)
+                        completion(.WPA_secured)
                     case 3:
-                        completion(.Secured)
+                        completion(.Enterprise_secured)
                     case 4:
                         completion(.Unsecured)
                     default:

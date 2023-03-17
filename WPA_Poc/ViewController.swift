@@ -29,8 +29,16 @@ class ViewController: UIViewController {
                         self.showAlertUnsecure(title: "Connection not secure", message: "Not continue this application") {
                             self.networkConnectionType.text = "Unsecure connection harmful"
                         }
-                    case .Secured:
-                        self.showAlertSecure(title: "Secure connection", message: "Continue this application") {
+                    case .WPA_secured:
+                        self.showAlertSecure(title: "WPA Secure connection", message: "Continue this application") {
+                            self.networkConnectionType.text = "Secure Connection"
+                        }
+                    case .WEP_secured:
+                        self.showAlertSecure(title: "WEP Secure connection", message: "Continue this application") {
+                            self.networkConnectionType.text = "Secure Connection"
+                        }
+                    case .Enterprise_secured:
+                        self.showAlertSecure(title: "WPA_Enterprise Secure connection", message: "Continue this application") {
                             self.networkConnectionType.text = "Secure Connection"
                         }
                     }
