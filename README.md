@@ -1,13 +1,24 @@
-An iOS application to check the network security and if net-
-work is not secure inform user to disconnect from this net-
-work.
-User can check the network security with this application
-which he/she connect.
-Application will stop with an alert message that connection is
-not secure.So this application is very useful for security pur-
-pose and safe users data from the hackers .When user con-
-nect any public wifi and unknown network first check the
-network security with this application then use another ap-
-plication.
-In this application network security checking with four differ-
-ent types of security like WPA,WPA2,WPA3,Unkown
+# Wi-Fi Security Checker iOS App
+
+An iOS application designed to assess the security of Wi-Fi networks and alert users if the network is unsafe. This app helps protect sensitive data by ensuring users only connect to secure networks.
+
+## Features
+
+- **Network Security Check:** Detects network security types including WPA, WPA2, WPA3, and Unknown.
+- **Alerts Unsafe Networks:** Immediately informs the user if the connected network is insecure, prompting them to disconnect.
+- **Data Protection:** Helps prevent unauthorized access and protects user data from potential hackers.
+- **User-Friendly:** Simple interface for checking network security before connecting to public or unknown Wi-Fi networks.
+
+## How It Works
+
+1. The app checks the current Wi-Fi connection.
+2. Evaluates the network security protocol.
+3. Displays an alert if the network is not secure, advising the user to disconnect.
+4. Allows safe usage of other applications after verification.
+
+## Installation
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/satyabratadas/wifi-security-checker.git
+
