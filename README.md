@@ -31,7 +31,7 @@ An iOS application designed to assess the security of Wi-Fi networks and alert u
 
 - Xcode 14 or later
 
-- iOS 14.0 or later
+- iOS 14.0 or below
 
 - Swift 5.8 or later
 
